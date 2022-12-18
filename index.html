@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <head lang='en'>
+	<meta charset='utf-8'/>
 	<title>The Odin Calculator</title>
 	<link rel="stylesheet" href="style.css"></link>
 </head>
@@ -9,32 +10,35 @@
 	<div class = 'wrapper'>
 		<h1>THE ODIN CALCULATOR</h1>
 		<div id = 'calculator'>
-			<div class = 'screen'>SCREEN</div>
+			<div class = 'screen'>
+				<div class='screen-top'></div>
+				<div class='screen-bot'></div>
+			</div>
 			
-			<div class = 'button clear'>AC</div>
-			<div class = 'button posneg'>+/-</div>
+			<div class = 'button operator clear'>AC</div>
+			<div class = 'button operator posneg'>+/-</div>
 			
-			<div class = 'button num'>7</div>
-			<div class = 'button num'>8</div>
-			<div class = 'button num'>9</div>
-			<div class = 'button num'>4</div>
-			<div class = 'button num'>5</div>
-			<div class = 'button num'>6</div>
-			<div class = 'button num'>1</div>
-			<div class = 'button num'>2</div>
-			<div class = 'button num'>3</div>
-			<div class = 'button num point'>.</div>
-			<div class = 'button num'>0</div>
-			<div class = 'button num'>00</div>
+			<div class = 'button num' data-key='7'>7</div>
+			<div class = 'button num' data-key='8'>8</div>
+			<div class = 'button num' data-key='9'>9</div>
+			<div class = 'button num' data-key='4'>4</div>
+			<div class = 'button num' data-key='5'>5</div>
+			<div class = 'button num' data-key='6'>6</div>
+			<div class = 'button num' data-key='1'>1</div>
+			<div class = 'button num' data-key='2'>2</div>
+			<div class = 'button num' data-key='3'>3</div>
+			<div class = 'button num' data-key='.'>.</div>
+			<div class = 'button num' data-key='0'>0</div>
+			<div class = 'button num' data-key='00'>00</div>
 			
-			<div class = 'button operator add-but'>+</div>
-			<div class = 'button operator minus-but'>-</div>
-			<div class = 'button operator multiply-but'>*</div>
-			<div class = 'button operator divide-but'>/</div>
+			<div class = 'button operator add-but' data-key='+'>+</div>
+			<div class = 'button operator minus-but' data-key='-'>-</div>
+			<div class = 'button operator multiply-but' data-key='*'>*</div>
+			<div class = 'button operator divide-but' data-key='/'>/</div>
 			
-			<div class = 'button result'>=</div>
+			<div class = 'button operator result'>=</div>
 		</div>
 	
 	</div>
-	<script src="js.js"></script>
+	<script type='text/javascript' src="js.js"></script>
 </body>

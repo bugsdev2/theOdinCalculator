@@ -30,6 +30,23 @@
 	place-items: center;
 	border: solid 2px #2C2C2C;
 	border-radius: 6px;
+	padding: 0 4px;
+}
+
+#calculator .screen-top {
+/*
+	border: 2px solid red;
+*/
+	justify-self: stretch;
+	font-size: 17px;
+}
+
+#calculator	.screen-bot {
+/*
+	border: 2px solid red;
+*/
+	justify-self: end;
+	font-size: 30px;
 }
 
 #calculator .button {
@@ -40,6 +57,10 @@
 	place-items: center;
 	border: solid 2px #2C2C2C;
 	border-radius: 6px;
+}
+
+#calculator .operator {
+	background: #D6F3F3;
 }
 
 #calculator .button.result {
@@ -64,7 +85,9 @@
 	grid-area: 2 / 3;
 }
 
+/*
 .point {
 	grid-area: 6 / 1;
 }
+*/
 
