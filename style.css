@@ -30,10 +30,11 @@
 
 #calculator .screen {
 	grid-column: 1/-1;
-	height: 80px;
+	grid-template-rows: minmax(20px, auto) minmax(80px, auto);
 	background: #EBEBEB;
 	display: grid;
 	grid-gap: 0.3rem;
+	
 	align-content: end;
 	border: solid 2px #2C2C2C;
 	border-radius: 6px;

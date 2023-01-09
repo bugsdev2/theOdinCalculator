@@ -1,6 +1,8 @@
 const numberButtons = document.querySelectorAll('.num');
 const operatorButtons = document.querySelectorAll('.operator');
-const resultButton = document.querySelector('.result');
+const clearButton = document.querySelector('.clear');
+const backspaceButton = document.querySelector('.backspace');
+const equalsButton = document.querySelector('.result');
 
 const screenMain = document.querySelector('.screen-main');
 const screenTop = document.querySelector('.screen-top');
@@ -8,39 +10,73 @@ const screenTop = document.querySelector('.screen-top');
 // declaring and initializing global variables
 let previousNum = '';
 let currentNum = '';
-let temp = '';
-let operend = '';
+let operator = '';
+let result = '';
+
+
+// creating functions for each functioning of calculator
+
+// updating mainscreen
+function mainScreenDisplay(e) {
+	if (e.target.textContent == '.' && currentNum.includes('.')) return;
+	currentNum += e.target.textContent;
+	screenMain.textContent = currentNum;
+};
+	
+// updating topscreen
+function topScreenDisplay(e) {
+	if (currentNum == '' && previousNum == '') return;
+	previousNum = currentNum;
+	currentNum = '';
+	operator = e.target.getAttribute('data-key');
+	screenMain.textContent = '';
+	screenTop.textContent = previousNum + ' ' + e.target.textContent;
+}
+
+
+// clear screen
+function clearScreen() {
+	currentNum = '';
+	previousNum = '';
+	screenMain.textContent = '';
+	screenTop.textContent = '';
+}
+
+// backspace
+function backspace() {
+	const strArr = currentNum.split('');
+	strArr.pop();
+	currentNum = strArr.join('');
+	screenMain.textContent = currentNum;
+}
+
+// equals operate function
+function operation() {
+	result = operate(operator, previousNum, currentNum);
+	screenMain.textContent = result;
+	screenTop.textContent = '';
+	currentNum = '';
+	
+}
 
 numberButtons.forEach(button => button.addEventListener('click', mainScreenDisplay))
 
-function mainScreenDisplay(e) {
-		currentNum += e.target.textContent;
-		screenMain.textContent = currentNum;
-	};
+
 	
 operatorButtons.forEach(button => button.addEventListener('click', topScreenDisplay))
 
-function topScreenDisplay(e) {
-	operend = e.target.getAttribute('data-key');
-	previousNum = currentNum;
-	currentNum = '';
-	screenMain.textContent = '';
-	screenTop.textContent = previousNum + ' ' + operend;
-}
+clearButton.addEventListener('click', clearScreen)
 
-resultButton.addEventListener('click', mainOperation)
+backspaceButton.addEventListener('click', backspace)
 
-function mainOperation(e) {
-	let result = operate(operend, previousNum, currentNum);
-	currentNum = '';
-	screenMain.textContent = result;
-}
+equalsButton.addEventListener('click', operation)
+
 
 
 // operate function
 
-function operate(operend, num1, num2) {
-	switch (operend) {
+function operate(operator, num1, num2) {
+	switch (operator) {
 		case '+': 
 			return add(num1, num2);
 			break;
@@ -74,7 +110,9 @@ function multiply(num1, num2) {
 
 function divide(num1, num2) {
 	if (num2 === '0' || num2 == 0){
-		return `${mathematicians[random(mathematicians.length)]} is furious at you.`
+		clearScreen();
+		return `${mathematicians[random(mathematicians.length)]} is furious at you
+		for dividing by zero.`
 	}
 	return Math.round((Number(num1)/Number(num2))*100)/100;
 }
@@ -90,8 +128,7 @@ const mathematicians = ['Euclid', 'Pythagoras', 'Archimedes',
 						'Carl F. Gauss', 'Leonhard Euler', 'Avicenna',
 						'Blaise Pascal', 'Omar Khayyam', 'Grigori Perelman',
 						'Leonardo Fibonacci', 'Kurt Gödel', 'Brahmagupta',
-						'George Boole', 'Muḥammad ibn Mūsā al-Khwārizmī',
-						'Abū Rayḥān al-Bīrūnī', 'Emmy Noether', 'Isaac Newton',
+						'George Boole',	'Abū Rayḥān al-Bīrūnī', 'Emmy Noether', 'Isaac Newton',
 						'Bhāskara II', 'Mary Jackson']
 
 function random(num){
