@@ -1,6 +1,6 @@
 # The Odin Calculator
 
-Site live at: (Under maintainance)
+Site live at: https://bugsdev2.github.io/theOdinCalculator/
 
 This is the final project in the foundations course. Building an on-screen calculator is gonna be fun.
 One thing I must try to take into account for this project is to work with media queries to make a responsive web app kinda thing.
