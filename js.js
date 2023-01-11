@@ -3,6 +3,7 @@ const operatorButtons = document.querySelectorAll('.operator');
 const clearButton = document.querySelector('.clear');
 const backspaceButton = document.querySelector('.backspace');
 const equalsButton = document.querySelector('.result');
+const posnegButton = document.querySelector('.posneg');
 
 const screenMain = document.querySelector('.screen-main');
 const screenTop = document.querySelector('.screen-top');
@@ -12,6 +13,7 @@ let previousNum = '';
 let currentNum = '';
 let operator = '';
 let result = '';
+let reg = /[1-9]/;
 
 
 // creating functions for each functioning of calculator
@@ -26,11 +28,47 @@ function mainScreenDisplay(e) {
 // updating topscreen
 function topScreenDisplay(e) {
 	if (currentNum == '' && previousNum == '') return;
-	previousNum = currentNum;
-	currentNum = '';
-	operator = e.target.getAttribute('data-key');
-	screenMain.textContent = '';
-	screenTop.textContent = previousNum + ' ' + e.target.textContent;
+	if (currentNum != '' && previousNum != '') {
+		//~ operator = e.target.getAttribute('data-key');
+		//~ result = operate(operator, previousNum, currentNum);
+		//~ previousNum = result;
+		//~ currentNum = '';
+		//~ screenTop.textContent = `${previousNum} ${e.target.textContent}`;
+		//~ screenMain.textContent = currentNum;
+		console.log('hooo');
+	} else {
+		previousNum = currentNum;
+		currentNum = '';
+		operator = e.target.getAttribute('data-key');
+		screenTop.textContent = `${previousNum} ${e.target.textContent}`;
+		screenMain.textContent = currentNum;
+	}
+		
+	//~ if (currentNum == '' && previousNum != '') {
+		//~ operator = e.target.getAttribute('data-key');
+		//~ result = operate(operator, previousNum, currentNum);
+		//~ previousNum = result;
+		//~ screenTop.textContent = previousNum + ' ' + e.target.textContent;
+	//~ } else {
+		//~ previousNum = currentNum;
+		//~ currentNum = '';
+		//~ operator = e.target.getAttribute('data-key');
+		//~ screenMain.textContent = '';
+		//~ screenTop.textContent = previousNum + ' ' + e.target.textContent;
+	//~ };
+	//~ if (previousNum != '') {
+		//~ operation();
+	//~ }
+	//~ if (previousNum == '' || result != '') {
+		//~ previousNum = result;
+		//~ currentNum = '';
+		//~ result = '';
+		//~ operator = e.target.getAttribute('data-key');
+		//~ screenMain.textContent = '';
+		//~ screenTop.textContent = previousNum + ' ' + e.target.textContent;
+	//~ }
+	
+		
 }
 
 
@@ -52,16 +90,34 @@ function backspace() {
 
 // equals operate function
 function operation() {
+	if(currentNum == '' || previousNum == '') return;
 	result = operate(operator, previousNum, currentNum);
 	screenMain.textContent = result;
-	screenTop.textContent = '';
+	previousNum = '';
 	currentNum = '';
+	operator = '';
+	screenTop.textContent = previousNum + ' ' + operator;
+	
 	
 }
 
+// control positive and negative
+function posneg() {
+	if(currentNum[0] == '-') {
+		const strArr = currentNum.split('');
+		strArr.shift();
+		currentNum = strArr.join('');
+	} else {
+		const strArr = currentNum.split('');
+		strArr.unshift('-');
+		currentNum = strArr.join('');
+	}
+	screenMain.textContent = currentNum;
+}
+
+///////////////////////  Click events ///////////////////////
+
 numberButtons.forEach(button => button.addEventListener('click', mainScreenDisplay))
-
-
 	
 operatorButtons.forEach(button => button.addEventListener('click', topScreenDisplay))
 
@@ -71,6 +127,21 @@ backspaceButton.addEventListener('click', backspace)
 
 equalsButton.addEventListener('click', operation)
 
+posnegButton.addEventListener('click', posneg)
+
+/////////////////////////////////////////////////////////////
+
+
+//~ ///////////////////////  Keypress events ///////////////////////
+
+//~ window.addEventListener('keydown', e => {
+	
+	//~ if (reg.test(e.key) || e.key == '0' || e.key == '.') {
+		//~ mainScreenDisplay();
+	//~ };
+//~ })
+
+//~ ////////////////////////////////////////////////////////////////
 
 
 // operate function
