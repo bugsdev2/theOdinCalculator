@@ -1,3 +1,23 @@
+:root {
+	--color-font: black;
+	--color-base-bg: #cacaca;
+	--color-base-calc-body: #808080;
+	--color-base-buttons: #ebebeb;
+	--color-base-buttons-operator: #d6f3f3;
+	--color-base-button-hover: #ADD8E6;
+	--color-base-calc-border: #2c2c2c;
+}
+
+.dark-mode {
+	--color-font: white;
+	--color-base-bg: #252525;
+	--color-base-calc-body: #3a3a3a;
+	--color-base-buttons: #575757;
+	--color-base-buttons-operator: #618b8b;
+	--color-base-button-hover: #50656b;
+	--color-base-calc-border: #757575;
+}
+
 *, *::before, *::after {
 	box-sizing: border-box;
 	margin: 0;
@@ -5,38 +25,44 @@
 }
 
 .wrapper {
+	background: var(--color-base-bg);
+	color: black;
 	display: grid;
 	place-items: center;
 	width: 100vw;
 	height: 100vh;
+	/* border: 2px solid red; */
 }
 
-/*
-.wrapper h1 {
-	margin: 10px auto;
+.dark-mode-button img {
+	position: fixed;
+	right: 1rem;
+	top: 1rem;
+	width: 100px;
+	height: 100px;
 }
-*/
+
 
 #calculator {
 	display: grid;
 	grid-template: auto / repeat(4, 1fr);
 	place-items: stretch;
 	grid-gap: 1rem;
-	background: grey;
+	background: var(--color-base-calc-body);
 	padding: 1rem;
 	border-radius: 10px;
-	border: solid 2px #2C2C2C;
+	border: solid 2px var(--color-base-calc-border);
 }
 
 #calculator .screen {
 	grid-column: 1/-1;
 	grid-template-rows: minmax(20px,1fr) minmax(30px, 4fr);
-	background: #EBEBEB;
+	background: var(--color-base-buttons);
 	display: grid;
 	grid-gap: 0.3rem;
-	
+	color: var(--color-font);
 	align-content: end;
-	border: solid 2px #2C2C2C;
+	border: solid 2px var(--color-base-calc-border);
 	border-radius: 6px;
 	padding: 0 4px;
 	position: relative;
@@ -48,18 +74,12 @@
 	position: absolute;
 	right: 10px;
 	bottom: 10px;
-/*
-	border: 2px solid red;
-*/
 	font-size: 25px;
 	text-align: right;
 	
 }
 
 #calculator .screen-top {
-/*
-	border: 2px solid red;
-*/
 	position: absolute;
 	top: 10px;
 	right: 10px;
@@ -68,17 +88,18 @@
 }
 
 #calculator .button {
+	color: var(--color-font);
 	width: 80px;
 	height: 70px;
-	background: #EBEBEB;
+	background: var(--color-base-buttons);
 	display: grid;
 	place-items: center;
-	border: solid 2px #2C2C2C;
+	border: solid 2px var(--color-base-calc-border);
 	border-radius: 6px;
 }
 
 #calculator .button:hover {
-	background: #ADD8E6;
+	background: var(--color-base-button-hover);
 }
 
 
@@ -86,7 +107,7 @@
 #calculator .result,
 #calculator .clear,
 #calculator .backspace {
-	background: #D6F3F3;
+	background: var(--color-base-buttons-operator)
 }
 
 #calculator .button.result {
