@@ -107,7 +107,7 @@
 	border-radius: 6px;
 }
 
-#calculator .button:hover {
+#calculator .button:active {
 	background: var(--color-base-button-hover);
 }
 
