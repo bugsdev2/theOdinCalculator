@@ -26,30 +26,34 @@
      inkscape:zoom="0.44809905"
      inkscape:cx="396.11778"
      inkscape:cy="561.25984"
-     inkscape:window-width="1366"
-     inkscape:window-height="713"
-     inkscape:window-x="0"
-     inkscape:window-y="27"
-     inkscape:window-maximized="1"
+     inkscape:window-width="1024"
+     inkscape:window-height="527"
+     inkscape:window-x="296"
+     inkscape:window-y="121"
+     inkscape:window-maximized="0"
      inkscape:current-layer="svg33058" />
   <defs
      id="defs33055" />
   <g
-     id="layer1"
-     transform="translate(-1.5471532,9.2585461)">
+     id="g846"
+     transform="rotate(180,105,148.5)">
     <g
-       id="g32835"
-       transform="matrix(0.5690832,0,0,0.5690832,62.618265,405.48573)">
-      <circle
-         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:8.809;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         id="circle32831"
-         cx="77.192383"
-         cy="-467.84772"
-         r="37.884594" />
-      <path
-         id="path32833"
-         style="fill:#000000;fill-opacity:1;stroke-width:1.08369"
-         d="m 78.057627,-507.47415 a 43.761723,38.516598 0 0 0 -38.05317,38.16716 43.761723,38.516598 0 0 0 38.05317,38.16763 z" />
+       id="layer1"
+       transform="translate(-1.5471532,9.2585461)">
+      <g
+         id="g32835"
+         transform="matrix(0.5690832,0,0,0.5690832,62.618265,405.48573)">
+        <circle
+           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:8.809;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="circle32831"
+           cx="77.192383"
+           cy="-467.84772"
+           r="37.884594" />
+        <path
+           id="path32833"
+           style="fill:#000000;fill-opacity:1;stroke-width:1.08369"
+           d="m 78.057627,-507.47415 a 43.761723,38.516598 0 0 0 -38.05317,38.16716 43.761723,38.516598 0 0 0 38.05317,38.16763 z" />
+      </g>
     </g>
   </g>
 </svg>

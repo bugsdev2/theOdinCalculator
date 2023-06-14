@@ -34,12 +34,21 @@
 	/* border: 2px solid red; */
 }
 
+.dark-mode-button {
+	display: grid;
+	place-items: center;
+}
 .dark-mode-button img {
 	position: fixed;
-	right: 1rem;
-	top: 1rem;
-	width: 100px;
-	height: 100px;
+	right: 20px;
+	top: 20px;
+	width:30px;
+}
+
+.dark-mode-button img:nth-child(1) {
+	right: 28px;
+	top: 27px;
+	width: 15px;
 }
 
 
