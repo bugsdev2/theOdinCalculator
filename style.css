@@ -15,7 +15,7 @@
 	--color-base-buttons: #575757;
 	--color-base-buttons-operator: #618b8b;
 	--color-base-button-hover: #50656b;
-	--color-base-calc-border: #757575;
+	--color-base-calc-border: #161616; /*#757575;*/
 }
 
 *, *::before, *::after {
@@ -34,10 +34,7 @@
 	/* border: 2px solid red; */
 }
 
-.dark-mode-button {
-	display: grid;
-	place-items: center;
-}
+
 .dark-mode-button img {
 	position: fixed;
 	right: 20px;
@@ -46,7 +43,7 @@
 }
 
 .dark-mode-button img:nth-child(1) {
-	right: 28px;
+	right: 27px;
 	top: 27px;
 	width: 15px;
 }
@@ -83,7 +80,7 @@
 	position: absolute;
 	right: 10px;
 	bottom: 10px;
-	font-size: 25px;
+	font-size: max(18px, 20px);
 	text-align: right;
 	
 }
@@ -93,13 +90,13 @@
 	top: 10px;
 	right: 10px;
 	text-align: right;
-	font-size: 18px;
+	font-size: 16px;
 }
 
 #calculator .button {
 	color: var(--color-font);
-	width: 80px;
-	height: 70px;
+	width: clamp(0.5rem, 3.8rem, 4rem);
+	height: clamp(0.5rem, 3.8rem, 4rem);
 	background: var(--color-base-buttons);
 	display: grid;
 	place-items: center;
@@ -120,7 +117,7 @@
 }
 
 #calculator .button.result {
-	width: 80px;
+	width: 3.8rem;
 	height: auto;
 	grid-area: 5 / 4 / span 2; 
 }

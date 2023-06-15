@@ -1,6 +1,6 @@
 const darkModeToggle = document.querySelector('.dark-mode-button');
 const darkModeImg = document.querySelector('.dark-mode-button img:nth-child(2)');
-let darkMode = false;
+let flag = false;
 console.log(darkModeImg.style.display)
 const darkModeEnable = () => {
     document.body.classList.add('dark-mode');
@@ -13,12 +13,12 @@ const darkModeDisable = () => {
 }
 
 darkModeToggle.addEventListener('click', () => {
-    if (darkMode == true) {
+    if (flag == true) {
         darkModeDisable();
-        darkMode = false;
+        flag = false;
     } else {
         darkModeEnable();
-        darkMode = true;
+        flag = true;
     }
     
 })
