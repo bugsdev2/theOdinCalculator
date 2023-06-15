@@ -53,7 +53,7 @@
 	display: grid;
 	grid-template: auto / repeat(4, 1fr);
 	place-items: stretch;
-	grid-gap: 1rem;
+	grid-gap: 0.75rem;
 	background: var(--color-base-calc-body);
 	padding: 1rem;
 	border-radius: 10px;
@@ -96,7 +96,7 @@
 #calculator .button {
 	color: var(--color-font);
 	width: clamp(0.5rem, 3.8rem, 4rem);
-	height: clamp(0.5rem, 3.8rem, 4rem);
+	height: clamp(0.5rem, 3.3rem, 3.5rem);
 	background: var(--color-base-buttons);
 	display: grid;
 	place-items: center;
